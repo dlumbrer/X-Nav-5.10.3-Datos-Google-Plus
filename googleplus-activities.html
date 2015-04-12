@@ -72,6 +72,10 @@
             for (i in resp.items){
                 var elemento = document.createElement('li');
                 elemento.innerHTML = resp.items[i].title + "<a href='" + resp.items[i].url + "'>Link a la actividad</a>";
+                /////////////////////////////GEOLOCALIZACION
+                if(resp.items[i].location){
+                    elemento.innerHTML += "<strong> Posicion: " + resp.items[i].location.position.latitude + " , " + resp.items[i].location.position.longitude;
+                }
                 lista.appendChild(elemento);
             }
             
